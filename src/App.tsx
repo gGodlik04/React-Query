@@ -1,11 +1,14 @@
-import { useState } from 'react'
+import { Crypto } from './components/CryptoBlock/Crypto/crypto'
+import { Users } from './components/UsersBlock/Users/Users/Users'
+import styles from "./interface.module.sass"
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
-      <div>
-        Привет
+      <div className={styles.interfaceBlock}>
+        <Crypto/>
+        <Users/>
       </div>
   )
 }
