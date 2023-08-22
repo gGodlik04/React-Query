@@ -4,6 +4,7 @@ import { UsersForm } from "../UsersForm/UsersForm";
 import styles from "./users.module.sass"
 import axios from "axios";
 import { useQuery } from "react-query";
+import { UsersTable } from "../../UsersTable/UsersTable";
 
 
 async function fetchUsers() {
@@ -42,7 +43,7 @@ export const Users: FC<IUsers> = (props: IUsers) => {
 
     return(
         <div className={styles.usersBlock}>
-            
+            <UsersTable data={data}/>
             <UsersForm/>
         </div>
     )

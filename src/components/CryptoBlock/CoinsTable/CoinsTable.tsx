@@ -1,6 +1,6 @@
 import { FC } from "react"
-import { ICoinsTable } from "../Interface/ICoinsTable"
-import { currencyType, dataType } from "../Crypto/type"
+import { ICoinsTable } from "../../Interface/ICoinsTable"
+import { currencyType } from "../Crypto/type"
 import styles from "./coinsTable.module.sass"
 
 
@@ -16,9 +16,9 @@ export const CoinsTable: FC<ICoinsTable> = (props: ICoinsTable) => {
                     <tr>
                         <th>№</th>
                         <th></th>
-                        <th>Название</th>
-                        <th>Тикер</th>
-                        <th>Цена</th>
+                        <th>NAME</th>
+                        <th>TICKER</th>
+                        <th>PRICE</th>
                     </tr>
                 </thead>
                 { (data as []).map((currency: currencyType) => {
