@@ -1,5 +1,6 @@
 import { FC } from "react"
 import { IUsersTable } from "../../Interface/IUsersTable"
+import { userType } from "./UsersTableType";
 
 
 export const UsersTable: FC<IUsersTable> = (props: IUsersTable) => {
@@ -11,13 +12,13 @@ export const UsersTable: FC<IUsersTable> = (props: IUsersTable) => {
             <table>
                 <thead>
                     <tr>
-                        <th>name</th>
-                        <th>email</th>
+                        <th>Name</th>
+                        <th>Email</th>
                     </tr>
                 </thead>
                 {data.map((user: userType) => {
                     return (
-                        <tbody>
+                        <tbody key={user.id}>
                             <tr>
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
@@ -31,8 +32,3 @@ export const UsersTable: FC<IUsersTable> = (props: IUsersTable) => {
     )
 }
 
-export type userType = {
-    id: string;
-    name: string;
-    email: string;
-}

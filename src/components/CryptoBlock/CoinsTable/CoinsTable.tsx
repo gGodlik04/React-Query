@@ -16,15 +16,15 @@ export const CoinsTable: FC<ICoinsTable> = (props: ICoinsTable) => {
                     <tr>
                         <th>№</th>
                         <th></th>
-                        <th>NAME</th>
-                        <th>TICKER</th>
-                        <th>PRICE</th>
+                        <th>Name</th>
+                        <th>Ticker</th>
+                        <th>Price</th>
                     </tr>
                 </thead>
                 { (data as []).map((currency: currencyType) => {
                     return(
-                        <tbody>
-                            <tr key={currency.id}>
+                        <tbody key={currency.id}>
+                            <tr>
                                 <td>{currency.rank}</td>
                                 <td><img src={currency.icon} className={styles.cryptoImg}></img></td>
                                 <td>{currency.name}</td>
