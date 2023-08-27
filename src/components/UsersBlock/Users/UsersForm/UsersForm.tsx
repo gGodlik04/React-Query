@@ -44,12 +44,12 @@ export const UsersForm: FC<IUsersForm> = (props: IUsersForm) => {
 
     return(
         <div>
-            <form onSubmit={onSubmited}>
+            <form onSubmit={onSubmited} className={styles.form}>
                 <input placeholder="input your nickname" id="nickname" onChange={onChanged}></input>
                 <input placeholder="input your email" id="email" onChange={onChanged}></input>
                 <button type="submit" className={styles.formButton}>submit</button>
             </form>
-            <span>NO INVALIDATION AND NO ADDING NEW INFO FROM FORM, CAUSE JSONPLACEHOLDER HAVEN'T POST API (BUT REQUEST IS COMPLETED)</span>
+            <span className={styles.message}>NO INVALIDATION AND NO ADDING NEW INFO FROM FORM, CAUSE JSONPLACEHOLDER HAVEN'T POST API (BUT REQUEST IS COMPLETED)</span>
         </div>
     )
 }

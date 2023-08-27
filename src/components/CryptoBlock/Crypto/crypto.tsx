@@ -36,9 +36,10 @@ export const Crypto: FC<ICrypto> = (props: ICrypto) => {
     return(
         <div className={styles.cryptoBlock}>
                 <CoinsTable data={data}/>
-                <button onClick={() => {setPage((page) => page - 10)}}>Next page</button>
-                <button onClick={() => {setPage((page) => page + 10)}}>Previous page</button>
-                
+                <div className={styles.buttons}>
+                    <button className={styles.button} onClick={() => {setPage((page) => page - 10)}}>Next page</button>
+                    <button className={styles.button} onClick={() => {setPage((page) => page + 10)}}>Previous page</button>
+                </div>      
         </div>
     )
 }
