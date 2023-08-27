@@ -5,25 +5,16 @@ import styles from "./users.module.sass"
 import axios from "axios";
 import {useQuery} from "react-query";
 import { UsersTable } from "../../UsersTable/UsersTable";
+import { fetchUsers } from "../../../Services/UserServices/users.services";
+import { useUsers } from "../../hooks/useUsers";
 
 
-const fetchUsers = async () => {
-    const {data} = await axios.get('https://jsonplaceholder.typicode.com/users')
-    return data
-}
-
-export const createUser = async (data: object) => {
-    return await axios.post("https://jsonplaceholder.typicode.com/users", data)
-}
 
 
 export const Users: FC<IUsers> = (props: IUsers) => {
 
 
-    const {data, isLoading, isError} = useQuery('users', fetchUsers, {
-        keepPreviousData: true,
-        refetchOnWindowFocus:false,
-    });
+    const {data, isLoading, isError} = useUsers();
 
 
     if (isLoading) {

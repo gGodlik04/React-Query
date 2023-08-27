@@ -3,7 +3,7 @@ import { IUsersForm } from "../../../Interface/IUsersForm"
 import styles from "./usersForm.module.sass"
 import axios from "axios";
 import { useMutation, useQueryClient } from "react-query";
-import { createUser } from "../Users/Users";
+import { createUser } from "../../../Services/UserServices/users.services";
 
 
 const initialFormData = {
